@@ -15,4 +15,12 @@ function decimalToOctal(n){
     return decimalToOctal(Math.floor(n/8)) + (n % 8);
 }
 
-console.log(decimalToOctal(10))
+function decimalToHex(n){
+    const hexChars="01233456789ABCDEF";
+
+    if(n === 0) return "0";
+    if(n < 0) return "Invalid input";
+
+    return decimalToHex(Math.floor(n/16)) + hexChars[n % 16];
+}
+console.log(decimalToHex(255));
