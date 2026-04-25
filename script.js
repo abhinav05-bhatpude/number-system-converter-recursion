@@ -16,7 +16,7 @@ function decimalToOctal(n){
 }
 
 function decimalToHex(n){
-    const hexChars="01233456789ABCDEF";
+    const hexChars="0123456789ABCDEF";
 
     if(n === 0) return "0";
     if(n < 0) return "Invalid input";
@@ -24,3 +24,7 @@ function decimalToHex(n){
     return decimalToHex(Math.floor(n/16)) + hexChars[n % 16];
 }
 console.log(decimalToHex(255));
+
+console.log(decimalToBinary(5));
+console.log(decimalToOctal(20));
+console.log(decimalToHex(100));
