@@ -53,6 +53,8 @@ convertBtn.addEventListener("click",function(){
     else{
         result=decimalToHex(num);
     }
-
+    
+    
     output.innerText=`Result : ${result}`;
+    numberInput.value="";
 });
