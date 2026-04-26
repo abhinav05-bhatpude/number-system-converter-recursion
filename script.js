@@ -28,3 +28,8 @@ console.log(decimalToHex(255));
 console.log(decimalToBinary(5));
 console.log(decimalToOctal(20));
 console.log(decimalToHex(100));
+
+const numberInput=document.getElementById("numberInput");
+const typeSelect=document.getElementById("typeSelect");
+const convertBtn=document.getElementById("convertBtn");
+const output=document.getElementById("output");
