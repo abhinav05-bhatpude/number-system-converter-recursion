@@ -33,3 +33,26 @@ const numberInput=document.getElementById("numberInput");
 const typeSelect=document.getElementById("typeSelect");
 const convertBtn=document.getElementById("convertBtn");
 const output=document.getElementById("output");
+
+convertBtn.addEventListener("click",function(){
+    const num=Number(numberInput.value);
+    const type=typeSelect.value;
+
+    if(isNaN(num)|| num <0){
+        output.innerText="Enter valid number ❌";
+        return;
+    }
+
+    let result="";
+    if(type==="binary"){
+        result=decimalToBinary(num);
+    }
+    else if(type==="octal"){
+        result=decimalToOctal(num);
+    }
+    else{
+        result=decimalToHex(num);
+    }
+
+    output.innerText=`Result : ${result}`;
+});
