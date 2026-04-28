@@ -68,6 +68,9 @@ convertBtn.addEventListener("click",function(){
     }
     
     
-   output.innerHTML=`<strong>Converted (${type}):</strong> ${result}`;
-    numberInput.value="";
+   output.innerHTML=`
+   <strong>Input:</strong> ${numberInput.value} <br>
+   <strong>Type :</strong> ${type} <br>
+   <strong>Result:</strong> ${result}
+   `;
 });
