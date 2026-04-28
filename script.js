@@ -33,6 +33,7 @@ function binaryToDecimal(str){
     return binaryToDecimal(rest) * 2 + last;
 }
 
+console.log(binaryToDecimal("101"));
 
 const numberInput=document.getElementById("numberInput");
 const typeSelect=document.getElementById("typeSelect");
