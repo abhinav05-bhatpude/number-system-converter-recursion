@@ -56,6 +56,9 @@ convertBtn.addEventListener("click",function(){
     else if(type==="octal"){
         result=decimalToOctal(num);
     }
+    if(type==="binaryToDecimal"){
+        result=binaryToDecimal(numberInput.value);
+    }
     else{
         result=decimalToHex(num);
     }
