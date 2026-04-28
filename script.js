@@ -59,6 +59,10 @@ convertBtn.addEventListener("click",function(){
     if(type==="binaryToDecimal"){
         result=binaryToDecimal(numberInput.value);
     }
+    if (type === "binaryToDecimal" && /[^01]/.test(numberInput.value)) {
+  output.innerText = "Enter valid binary number ❌";
+  return;
+}
     else{
         result=decimalToHex(num);
     }
