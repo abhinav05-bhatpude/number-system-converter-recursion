@@ -61,3 +61,10 @@ button:hover {
   flex-direction: column;
   gap: 14px;
 }
+
+#output{
+    margin-top:15px;
+    padding:10px;
+    background: #020617;
+    border-radius: 6px;
+}
