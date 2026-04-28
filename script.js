@@ -74,3 +74,12 @@ convertBtn.addEventListener("click",function(){
    <strong>Result:</strong> ${result}
    `;
 });
+
+typeSelect.addEventListener("change",function(){
+    if(typeSelect.value === "binaryToDecimal"){
+        numberInput.placeholder="Enter binary number";
+    }
+    else{
+        numberInput.placeholder="Enter decimal number";
+    }
+});
