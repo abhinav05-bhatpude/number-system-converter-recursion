@@ -23,11 +23,16 @@ function decimalToHex(n){
 
     return decimalToHex(Math.floor(n/16)) + hexChars[n % 16];
 }
-console.log(decimalToHex(255));
 
-console.log(decimalToBinary(5));
-console.log(decimalToOctal(20));
-console.log(decimalToHex(100));
+function binaryToDecimal(str){
+    if(str.length ===0) return 0;
+
+    let last=Number(str[str.length - 1]);
+    let rest=str.slice(0,-1);
+
+    return binaryToDecimal(rest) * 2 + last;
+}
+
 
 const numberInput=document.getElementById("numberInput");
 const typeSelect=document.getElementById("typeSelect");
