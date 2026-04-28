@@ -49,6 +49,8 @@ convertBtn.addEventListener("click",function(){
         return;
     }
 
+    output.innerText="Converting...";
+
     let result="";
     if(type==="binary"){
         result=decimalToBinary(num);
