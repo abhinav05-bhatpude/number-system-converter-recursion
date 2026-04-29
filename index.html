@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number System Converter</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Number System Converter</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>🔢 Number System Converter</h1>
 
-    <input type="number" id="numberInput" placeholder="Enter number">
+  <div class="card">
 
-    <select id="typeSelect">
-        <option value="binary">Binary</option>
-        <option value="octal">Octal</option>
-        <option value="hex">Hexadecimal</option>
-        <option value="binaryToDecimal">Binary to Decimal</option>
-    </select>
+    <h1>🔢 Number Converter</h1>
+    <p class="subtitle">Convert numbers using recursion</p>
+
+    <div class="input-box">
+      <input id="numberInput" type="text" placeholder="Enter number">
+    </div>
+
+    <div class="input-box">
+      <select id="typeSelect">
+        <option value="binary">Decimal → Binary</option>
+        <option value="octal">Decimal → Octal</option>
+        <option value="hex">Decimal → Hex</option>
+        <option value="binaryToDecimal">Binary → Decimal</option>
+      </select>
+    </div>
 
     <button id="convertBtn">Convert</button>
 
-    <p id="output"></p>
+    <div id="output" class="output-box"></div>
 
-    <script src="script.js"></script>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
