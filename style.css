@@ -1,70 +1,97 @@
-body{
-    font-family:Arial;
-    background:#0f172a;
-    color:white;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-}
-.container{
-    background:#1e293b;
-    padding:20px;
-    border-radius: 10px;
-    width:300px;
-    text-align: center;
-}
-/* Inputs + Select */
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 8px;
-  border: 1px solid #334155;
-  background: #020617;
-  color: white;
-  font-size: 14px;
-  transition: all 0.2s ease;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Focus effect */
-input:focus, select:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 6px rgba(59,130,246,0.5);
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+
+  padding: 30px;
+  width: 440px; /* 🔥 bigger */
+  height:400px;
+
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  color: #f1f5f9;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  font-size: 22px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+/* Inputs */
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 10px;
+  border: 1px solid #475569;
+
+  background: #020617;
+  color: #e2e8f0;
+
+  font-size: 15px;
 }
 
 /* Button */
 button {
-  width: 100%;
   padding: 12px;
-  margin-top: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: white;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+
+  font-size: 15px;
+  font-weight: 500;
+
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 0.3s;
 }
 
-/* Hover effect */
+/* Hover */
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(59,130,246,0.4);
+  box-shadow: 0 8px 20px rgba(139,92,246,0.4);
 }
 
-/* Spacing improvement */
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
+/* Output */
+.output-box {
+  background: #020617;
+  padding: 14px;
+  border-radius: 10px;
 
-#output{
-    margin-top:15px;
-    padding:10px;
-    background: #020617;
-    border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+
+  min-height: 50px;
 }
