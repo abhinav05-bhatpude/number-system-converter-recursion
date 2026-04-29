@@ -1,87 +1,76 @@
-console.log("Recursion project started");
-
-
 function decimalToBinary(n){
-    if(n===0) return "0";
-    if(n < 0) return "Invalid input";
-
-    return decimalToBinary(Math.floor(n/2)) + (n%2);
+  if(n === 0) return "";
+  return decimalToBinary(Math.floor(n/2)) + (n % 2);
 }
 
 function decimalToOctal(n){
-    if(n===0) return "0";
-    if(n < 0) return "Invalid input";
-
-    return decimalToOctal(Math.floor(n/8)) + (n % 8);
+  if(n === 0) return "";
+  return decimalToOctal(Math.floor(n/8)) + (n % 8);
 }
 
 function decimalToHex(n){
-    const hexChars="0123456789ABCDEF";
-
-    if(n === 0) return "0";
-    if(n < 0) return "Invalid input";
-
-    return decimalToHex(Math.floor(n/16)) + hexChars[n % 16];
+  const hexChars = "0123456789ABCDEF";
+  if(n === 0) return "";
+  return decimalToHex(Math.floor(n/16)) + hexChars[n % 16];
 }
 
 function binaryToDecimal(str){
-    if(str.length ===0) return 0;
-
-    let last=Number(str[str.length - 1]);
-    let rest=str.slice(0,-1);
-
-    return binaryToDecimal(rest) * 2 + last;
+  if(str.length === 0) return 0;
+  return binaryToDecimal(str.slice(0, -1)) * 2 + Number(str[str.length - 1]);
 }
 
-console.log(binaryToDecimal("101"));
+const numberInput = document.getElementById("numberInput");
+const typeSelect = document.getElementById("typeSelect");
+const convertBtn = document.getElementById("convertBtn");
+const output = document.getElementById("output");
 
-const numberInput=document.getElementById("numberInput");
-const typeSelect=document.getElementById("typeSelect");
-const convertBtn=document.getElementById("convertBtn");
-const output=document.getElementById("output");
+convertBtn.addEventListener("click", () => {
+  const value = numberInput.value.trim();
+  const num = Number(value);
+  const type = typeSelect.value;
 
-convertBtn.addEventListener("click",function(){
-    const num=Number(numberInput.value);
-    const type=typeSelect.value;
+  let result = "";
 
-    if(isNaN(num)|| num <0){
-        output.innerText="Enter valid number ❌";
-        return;
+  if(type === "binary"){
+    if(isNaN(num) || num < 0){
+      output.innerText = "Enter valid decimal number ❌";
+      return;
     }
+    result = num === 0 ? "0" : decimalToBinary(num);
+  }
+  else if(type === "octal"){
+    if(isNaN(num) || num < 0){
+      output.innerText = "Enter valid decimal number ❌";
+      return;
+    }
+    result = num === 0 ? "0" : decimalToOctal(num);
+  }
+  else if(type === "hex"){
+    if(isNaN(num) || num < 0){
+      output.innerText = "Enter valid decimal number ❌";
+      return;
+    }
+    result = num === 0 ? "0" : decimalToHex(num);
+  }
+  else if(type === "binaryToDecimal"){
+    if(value === "" || /[^01]/.test(value)){
+      output.innerText = "Enter valid binary number ❌";
+      return;
+    }
+    result = binaryToDecimal(value);
+  }
 
-    output.innerText="Converting...";
+  output.innerHTML = `
+    <strong>Result:</strong> ${result}
+  `;
 
-    let result="";
-    if(type==="binary"){
-        result=decimalToBinary(num);
-    }
-    else if(type==="octal"){
-        result=decimalToOctal(num);
-    }
-    if(type==="binaryToDecimal"){
-        result=binaryToDecimal(numberInput.value);
-    }
-    if (type === "binaryToDecimal" && /[^01]/.test(numberInput.value)) {
-  output.innerText = "Enter valid binary number ❌";
-  return;
-}
-    else{
-        result=decimalToHex(num);
-    }
-    
-    
-   output.innerHTML=`
-   <strong>Input:</strong> ${numberInput.value} <br>
-   <strong>Type :</strong> ${type} <br>
-   <strong>Result:</strong> ${result}
-   `;
+  numberInput.value = "";
 });
 
-typeSelect.addEventListener("change",function(){
-    if(typeSelect.value === "binaryToDecimal"){
-        numberInput.placeholder="Enter binary number";
-    }
-    else{
-        numberInput.placeholder="Enter decimal number";
-    }
+typeSelect.addEventListener("change", () => {
+  if(typeSelect.value === "binaryToDecimal"){
+    numberInput.placeholder = "Enter binary (e.g. 1010)";
+  } else {
+    numberInput.placeholder = "Enter decimal (e.g. 25)";
+  }
 });
